@@ -1,11 +1,11 @@
 ## Installation
 
-    npm install googl
+    npm install goo.gl
 
 ## Usage
 
 ```javascript
-var googl = require('googl');
+var googl = require('goo.gl');
 
 // Shorten a long url and output the result
 googl.shorten('http://www.google.com/', function (shortUrl) {
