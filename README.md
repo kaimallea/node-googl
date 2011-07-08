@@ -1,8 +1,16 @@
 ## Installation
 
-    npm install goo.gl
+    npm install -g goo.gl
 
-## Usage
+## Command-line Usage
+
+    goo.gl www.google.com
+    goo.gl http://goo.gl/fbsS
+    goo.gl www.google.com http://goo.gl/fbsS nba.com
+
+It'll automatically shorten or expand single or multiple urls
+
+## Module Usage
 
 ```javascript
 var googl = require('goo.gl');
