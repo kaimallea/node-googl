@@ -2,9 +2,9 @@
   "author": "Kai Mallea <kmallea@gmail.com> (http://www.mallea.net/)",
   "name": "goo.gl",
   "description": "A url shortener and expander powered by Google's URL shorting service",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/kaimallea/node-googl",
-  "keywords": ["googl", "goo.gl", "urls", "url shortner", "url expander"],
+  "keywords": ["google", "googl", "goo.gl", "urls", "shortner", "expander"],
   "repository": {
     "type": "git",
     "url": "git://github.com/kaimallea/node-googl.git"
@@ -14,5 +14,6 @@
   },
   "dependencies": {},
   "devDependencies": {},
-  "main": "lib/googl.js"
+  "main": "lib/googl.js",
+  "bin": { "goo.gl": "./lib/googl.js" }
 }
