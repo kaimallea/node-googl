@@ -10,7 +10,7 @@
     "url": "git://github.com/kaimallea/node-googl.git"
   },
   "engines": {
-    "node": "v0.4.9"
+    "node": ">= v0.4.9"
   },
   "dependencies": {},
   "devDependencies": {},
