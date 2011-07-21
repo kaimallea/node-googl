@@ -15,5 +15,5 @@
   "dependencies": {},
   "devDependencies": {},
   "main": "lib/googl.js",
-  "bin": { "goo.gl": "./lib/googl.js" }
+  "bin": { "goo.gl": "cli.js" }
 }
