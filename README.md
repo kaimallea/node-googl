@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/kaimallea/node-googl.png)](http://travis-ci.org/kaimallea/node-googl)
 ## Installation
 
     npm install -g goo.gl
