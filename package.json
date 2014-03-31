@@ -1,19 +1,42 @@
 {
-  "author": "Kai Mallea <kmallea@gmail.com> (http://www.mallea.net/)",
+  "author": "Kai Mallea <kmallea@gmail.com>",
   "name": "goo.gl",
-  "description": "A url shortener and expander powered by Google's URL shorting service",
-  "version": "0.0.2",
+  "description": "A url shortener and expander powered by Google's URL shortening service",
+  "version": "0.1.0",
   "homepage": "https://github.com/kaimallea/node-googl",
-  "keywords": ["google", "googl", "goo.gl", "urls", "shortner", "expander"],
+  "keywords": [
+    "google",
+    "googl",
+    "goo.gl",
+    "url",
+    "urls",
+    "short",
+    "shorten",
+    "shortener",
+    "expander"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/kaimallea/node-googl.git"
   },
   "engines": {
-    "node": ">= v0.4.9"
+    "node": ">= v0.10.20"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "request": "~2.34.0",
+    "commander": "~2.2.0",
+    "q": "~1.0.1"
+  },
   "main": "lib/googl.js",
-  "bin": { "goo.gl": "./cli.js" }
+  "bin": {
+    "goo.gl": "./cli.js"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "chai": "~1.9.1",
+    "chai-as-promised": "~4.1.1"
+  }
 }
