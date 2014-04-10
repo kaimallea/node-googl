@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kaimallea/node-googl.svg?branch=master)](https://travis-ci.org/kaimallea/node-googl)
+
 ## Installation
 
     npm install -g goo.gl
