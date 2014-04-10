@@ -4,29 +4,54 @@
 
 ## Command-line Usage
 
-    goo.gl www.google.com
-    goo.gl http://goo.gl/fbsS
-    goo.gl www.google.com http://goo.gl/fbsS nba.com
+```bash
+$ goo.gl www.google.com
+http://www.google.com -> http://goo.gl/fbsS
 
-It'll automatically shorten or expand single or multiple urls
+$ goo.gl http://goo.gl/fbsS
+http://goo.gl/fbsS -> http://www.google.com/
+
+$ goo.gl www.google.com http://goo.gl/fbsS nba.com
+http://goo.gl/fbsS -> http://www.google.com/
+http://www.google.com -> http://goo.gl/fbsS
+http://nba.com -> http://goo.gl/d1T8
+
+$ goo.gl --key aBcDeFGhIjKLMnOPqRsT www.spotify.com
+http://www.spotify.com/ -> http://goo.gl/cJFAL
+```
+
+It'll shorten and/or expand one or more URLs at a time.
 
 ## Module Usage
+
+Methods return promises.
 
 ```javascript
 var googl = require('goo.gl');
 
 // Shorten a long url and output the result
-googl.shorten('http://www.google.com/', function (shortUrl) {
-    console.log(shortUrl);
-});
+googl.shorten('http://www.google.com/')
+    .then(function (shortUrl) {
+        console.log(shortUrl);
+    }).
+    .catch(function (err) {
+        console.error(err.message);
+    });
 
 
 // Set a developer key (see http://goo.gl/4DvFk for more info.)
 googl.setKey('aBcDeFGhIjKLMnOPqRsT');
 
+// Get currently set developer key
+googl.getKey();
 
 // Expand a goo.gl url and output the result
-googl.expand('http://goo.gl/fbsS', function (longUrl) {
-    console.log(shortUrl);
+googl.expand('http://goo.gl/fbsS')
+    .then(function (longUrl) {
+        console.log(shortUrl);
+    })
+    .catch(function (err) {
+        console.error(err.message);
+    });
 });
 ```

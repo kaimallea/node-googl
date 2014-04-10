@@ -1,33 +1,51 @@
 #!/usr/bin/env node
+(function() {
+    'use strict';
 
-var googl = require('./lib/googl.js'),
-    url = require('url'),
-    args = process.argv.slice(2),
-    hostname = null;
+    var googl = require('./lib/googl.js'),
+        commander = require('commander'),
+        urlParser = require('url').parse;
 
-if (args.length) {
-    args.forEach(function (val, index, array) {
-        if (typeof url.parse(val).protocol === 'undefined') {
-            val = 'http://' + val;
+    commander
+        .version(googl.VERSION)
+        .usage('[options] <url ...>')
+        .option('-k, --key <api-key>', 'Specify an API key to use')
+        .parse(process.argv);
+
+    if (commander.args.length) {
+
+        if (commander.key) {
+            googl.setKey(commander.key);
         }
-        
-        hostname = (typeof url.parse(val).hostname === 'undefined' ? '' : 
-                    url.parse(val).hostname);
-        
-        if (!hostname) {
-            console.log('Invalid url: %s', val);
-            return;
-        }
-        
-        if (hostname === 'goo.gl') {
-            googl.expand(val, function (res) {
-                console.log('%s -> %s', val, (res.longUrl || JSON.stringify(res)));  
-            });
-            return;
-        }
-        
-        googl.shorten(val, function (res) {
-            console.log('%s -> %s', val, (res.id || JSON.stringify(res)));  
+
+        commander.args.forEach(function (url, index, array) {
+
+            if (!urlParser(url).protocol) {
+                url = 'http://' + url;
+            }
+
+            if ('goo.gl' === urlParser(url).hostname) {
+
+                googl.expand(url)
+                    .then(function (longUrl) {
+                        console.log('%s -> %s', url, longUrl);
+                    })
+                    .catch(function (err) {
+                        console.error(err.message);
+                    });
+
+            } else {
+
+                googl.shorten(url)
+                    .then(function (shortUrl) {
+                        console.log('%s -> %s', url, shortUrl);
+                    })
+                    .catch(function (err) {
+                        console.error(err.message);
+                    });
+
+            }
         });
-    });
-}
+    }
+
+}());
