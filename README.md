@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/kaimallea/node-googl.svg?branch=master)](https://travis-ci.org/kaimallea/node-googl)
+[![Build Status](https://travis-ci.org/kaimallea/node-googl.svg?branch=master)](https://travis-ci.org/kaimallea/node-googl) [![NPM version](https://badge.fury.io/js/goo.gl.svg)](http://badge.fury.io/js/goo.gl)
 
 ## Installation
 
