@@ -35,7 +35,7 @@ var googl = require('goo.gl');
 googl.shorten('http://www.google.com/')
     .then(function (shortUrl) {
         console.log(shortUrl);
-    }).
+    })
     .catch(function (err) {
         console.error(err.message);
     });
