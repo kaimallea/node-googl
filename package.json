@@ -23,7 +23,7 @@
     "node": ">= v0.10.20"
   },
   "dependencies": {
-    "request": "~2.34.0",
+    "request": "~2.40.0",
     "commander": "~2.2.0",
     "q": "~1.0.1"
   },
