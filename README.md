@@ -26,10 +26,16 @@ It'll shorten and/or expand one or more URLs at a time.
 
 ## Module Usage
 
-Methods return promises.
+Most methods return promises.
 
 ```javascript
 var googl = require('goo.gl');
+
+// Set a developer key (_required by Google_; see http://goo.gl/4DvFk for more info.)
+googl.setKey('aBcDeFGhIjKLMnOPqRsT');
+
+// Get currently set developer key
+googl.getKey();
 
 // Shorten a long url and output the result
 googl.shorten('http://www.google.com/')
@@ -40,20 +46,35 @@ googl.shorten('http://www.google.com/')
         console.error(err.message);
     });
 
-
-// Set a developer key (see http://goo.gl/4DvFk for more info.)
-googl.setKey('aBcDeFGhIjKLMnOPqRsT');
-
-// Get currently set developer key
-googl.getKey();
-
 // Expand a goo.gl url and output the result
 googl.expand('http://goo.gl/fbsS')
     .then(function (longUrl) {
+        console.log(longUrl);
+    })
+    .catch(function (err) {
+        console.error(err.message);
+    });
+});
+
+// Expand a goo.gl url and pass userIp for capping purposes
+googl.expand('http://goo.gl/fbsS', { userIp: '127.0.0.1' })
+    .then(function (longUrl) {
+        console.log(longUrl);
+    })
+    .catch(function (err) {
+        console.error(err.message);
+    });
+});
+
+// Shorten a goo.gl url and pass quotaUser for capping purposes
+// See: https://developers.google.com/console/help/#cappingusage
+googl.shorten('www.spotify.com', { quotaUser: 'UserID' })
+    .then(function (shortUrl) {
         console.log(shortUrl);
     })
     .catch(function (err) {
         console.error(err.message);
     });
 });
+
 ```
