@@ -13,7 +13,7 @@
             googl.setKey('');
         });
 
-        it('should fail with no input', function(done) {
+        xit('should fail with no input', function(done) {
             var errMsg = 'Invalid URL specified';
 
             expect(googl._googleRequest())
@@ -21,7 +21,7 @@
                 .and.notify(done);
         });
 
-        it('should fail with no url', function(done) {
+        xit('should fail with no url', function(done) {
             var errMsg = 'Invalid URL specified';
 
             expect(googl._googleRequest('shorten'))
@@ -29,7 +29,7 @@
                 .and.notify(done);
         });
 
-        it('should shorten a url', function(done) {
+        xit('should shorten a url', function(done) {
             var url = 'http://www.spotify.com',
                 urlShortened = 'http://goo.gl/cJFAL';
 
@@ -38,7 +38,7 @@
                 .and.notify(done);
         });
 
-        it('should expand a url', function(done) {
+        xit('should expand a url', function(done) {
             var url = 'http://www.spotify.com',
                 urlShortened = 'http://goo.gl/cJFAL';
 
@@ -47,7 +47,7 @@
                 .and.notify(done);
         });
 
-        it('should fail as invalid operation when shorten or expand not used', function(done) {
+        xit('should fail as invalid operation when shorten or expand not used', function(done) {
             var errMsg = 'Invalid operation',
                 url = 'https://www.spotify.com/';
 
