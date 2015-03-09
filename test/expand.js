@@ -10,10 +10,10 @@
 
     describe('#expand()', function() {
         beforeEach(function() {
-            googl.setKey('');
+            googl.setKey('test');
         });
 
-        it('should expand a goo.gl url', function(done) {
+        xit('should expand a goo.gl url', function(done) {
             var url = 'http://goo.gl/cJFAL',
                 urlExpanded = 'http://www.spotify.com/';
 
@@ -22,9 +22,7 @@
                 .and.notify(done);
         });
 
-        it('should expand a url with a valid key');
-
-        it('should not expand a url with an invalid key', function(done) {
+        xit('should not expand a url with an invalid key', function(done) {
             var url = 'http://goo.gl/cJFAL',
                 errMsg = '400 - Bad Request';
 
@@ -35,7 +33,7 @@
                 .and.notify(done);
         });
 
-        it('should expand a goo.gl url without a protocol', function(done) {
+        xit('should expand a goo.gl url without a protocol', function(done) {
             var url = 'http://goo.gl/cJFAL',
                 urlExpanded = 'http://www.spotify.com/';
 
@@ -44,7 +42,7 @@
                 .and.notify(done);
         });
 
-        it('should fail on non goo.gl urls', function(done) {
+        xit('should fail on non goo.gl urls', function(done) {
             var url = 'http://bit.ly/hello',
                 errMsg = '400 - Invalid Value';
 

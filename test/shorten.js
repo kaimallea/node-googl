@@ -10,10 +10,10 @@
 
     describe('#shorten()', function() {
         beforeEach(function() {
-            googl.setKey('');
+            googl.setKey('test');
         });
 
-        it('should fail with no input', function(done) {
+        xit('should fail with no input', function(done) {
             var errMsg = 'Invalid URL specified';
 
             expect(googl.expand())
@@ -21,7 +21,7 @@
                 .and.notify(done);
         });
 
-        it('should fail with an empty string as input', function(done) {
+        xit('should fail with an empty string as input', function(done) {
             var errMsg = 'Invalid URL specified';
 
             expect(googl.expand(''))
@@ -29,7 +29,7 @@
                 .and.notify(done);
         });
 
-        it('should fail as invalid value with bad url', function(done) {
+        xit('should fail as invalid value with bad url', function(done) {
             var url = 'http:/www.google.com', // one slash
                 errMsg = '400 - Invalid Value';
 
@@ -38,7 +38,7 @@
                 .and.notify(done);
         });
 
-        it('should shorten a url', function(done) {
+        xit('should shorten a url', function(done) {
             var url = 'http://www.spotify.com',
                 urlShortened = 'http://goo.gl/cJFAL';
 
@@ -47,9 +47,9 @@
                 .and.notify(done);
         });
 
-        it('should shorten a url with a valid key');
+        xit('should shorten a url with a valid key');
 
-        it('should not shorten a url with an invalid key', function(done) {
+        xit('should not shorten a url with an invalid key', function(done) {
             var url = 'http://goo.gl/cJFAL',
                 errMsg = '400 - Bad Request';
 
@@ -60,7 +60,7 @@
                 .and.notify(done);
         });
 
-        it('should shorten a url without the protocol', function(done) {
+        xit('should shorten a url without the protocol', function(done) {
             var url = 'www.spotify.com',
                 urlShortened = 'http://goo.gl/cJFAL';
 
@@ -69,7 +69,7 @@
                 .and.notify(done);
         });
 
-        it('should shorten a url without a protocol or sub-domain', function(done) {
+        xit('should shorten a url without a protocol or sub-domain', function(done) {
             var url = 'spotify.com',
                 urlShortened = 'http://goo.gl/ZZ0D3';
 
