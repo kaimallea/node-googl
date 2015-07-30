@@ -54,7 +54,6 @@ googl.expand('http://goo.gl/fbsS')
     .catch(function (err) {
         console.error(err.message);
     });
-});
 
 // Expand a goo.gl url and pass userIp for capping purposes
 googl.expand('http://goo.gl/fbsS', { userIp: '127.0.0.1' })
@@ -64,7 +63,6 @@ googl.expand('http://goo.gl/fbsS', { userIp: '127.0.0.1' })
     .catch(function (err) {
         console.error(err.message);
     });
-});
 
 // Shorten a goo.gl url and pass quotaUser for capping purposes
 // See: https://developers.google.com/console/help/#cappingusage
@@ -75,6 +73,40 @@ googl.shorten('www.spotify.com', { quotaUser: 'UserID' })
     .catch(function (err) {
         console.error(err.message);
     });
-});
+
+// Look up a short URL's analytics
+// See: https://developers.google.com/url-shortener/v1/getting_started#url_analytics
+googl.analytics('http://goo.gl/fbsS', {projection: 'ANALYTICS_CLICKS'})
+    .then(function(result) {        
+        console.log(result);
+    })
+    .catch(function (err) {
+        console.error(err.message);
+    });
+
+googl.analytics('http://goo.gl/fbsS', {projection: 'FULL'})
+    .then(function(result) {        
+        console.log(result);
+    })
+    .catch(function (err) {
+        console.error(err.message);
+    });
+
+googl.analytics('http://goo.gl/fbsS', {projection: 'ANALYTICS_TOP_STRINGS'})
+    .then(function(result) {        
+        console.log(result);
+    })
+    .catch(function (err) {
+        console.error(err.message);
+    });
+
+//default to projection=FULL
+googl.analytics('http://goo.gl/fbsS')
+    .then(function(result) {        
+        console.log(result);
+    })
+    .catch(function (err) {
+        console.error(err.message);
+    });
 
 ```
