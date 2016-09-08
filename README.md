@@ -74,6 +74,16 @@ googl.shorten('www.spotify.com', { quotaUser: 'UserID' })
         console.error(err.message);
     });
 
+// Shorten a goo.gl url and pass a referer to be used with referer restrictions.
+// See: https://support.google.com/googleapi/answer/6310037?hl=en
+googl.shorten('www.spotify.com', { referer: 'my.domain.com' })
+    .then(function (shortUrl) {
+        console.log(shortUrl);
+    })
+    .catch(function (err) {
+        console.error(err.message);
+    });
+
 // Look up a short URL's analytics
 // See: https://developers.google.com/url-shortener/v1/getting_started#url_analytics
 googl.analytics('http://goo.gl/fbsS', {projection: 'ANALYTICS_CLICKS'})
