@@ -1,3 +1,4 @@
+# DEPCREATED. Google [discontinued their goo.gl URL shortener](https://developers.googleblog.com/2018/03/transitioning-google-url-shortener.html) on March 30, 2019
 [![Build Status](https://travis-ci.org/kaimallea/node-googl.svg?branch=master)](https://travis-ci.org/kaimallea/node-googl) [![NPM version](https://badge.fury.io/js/goo.gl.svg)](http://badge.fury.io/js/goo.gl)
 
 ## Installation
